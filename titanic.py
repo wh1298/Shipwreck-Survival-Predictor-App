@@ -1,5 +1,5 @@
 """
-🚢 Titanic Survival Prediction Web App with SHAP Explainability
+🚢 Shipwreck Survival Prediction Web App with SHAP Explainability
 """
 
 # --------------------------------------------------
@@ -22,8 +22,8 @@ import streamlit.components.v1 as components
 # --------------------------------------------------
 # Streamlit Page Setup
 # --------------------------------------------------
-st.set_page_config(page_title="Titanic Survival Predictor", page_icon="🚢", layout="centered")
-st.title("🚢 Predict Your Survival Chances on the Titanic")
+st.set_page_config(page_title="🚢 Survival Predictor", page_icon="🚢", layout="centered")
+st.title("🚢 Predict Your Survival Chances a Shipwreck")
 
 img = Image.open("titanic.jpg")
 st.image(img, width=400)
@@ -183,7 +183,6 @@ def explain_prediction(model, input_data):
     st.subheader("🔍 Why the model made this prediction")
     st.write("""
     SHAP (SHapley Additive exPlanations) shows how each feature contributed to your survival prediction.
-    Pink bars mean the feature increased your chance of survival; blue bars mean it decreased.
     """)
 
     # Convert Tensor to NumPy
@@ -205,6 +204,9 @@ def explain_prediction(model, input_data):
     # Bar chart
     contributions = sv
     st.subheader("📊 Feature Contributions")
+    st.write("""
+    Green bars mean the feature increased your chance of survival; red bars mean it decreased.
+    """)
     contribution_df = pd.DataFrame({
         "Feature": feature_names,
         "Contribution": contributions
