@@ -167,7 +167,7 @@ def explain_prediction(model, input_data):
     st.subheader("🔍 Why the model made this prediction")
     st.write("""
     SHAP (SHapley Additive exPlanations) shows how each feature contributed to your survival prediction.
-    Green bars mean the feature increased your chance of survival; red bars mean it decreased.
+    Pink bars mean the feature increased your chance of survival; blue bars mean it decreased.
     """)
 
     # Convert Tensor to NumPy
