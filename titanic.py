@@ -22,7 +22,7 @@ import streamlit.components.v1 as components
 # --------------------------------------------------
 # Streamlit Page Setup
 # --------------------------------------------------
-st.set_page_config(page_title="🚢 Survival Predictor", page_icon="🚢", layout="centered")
+st.set_page_config(page_title="Survival Predictor", page_icon="🚢", layout="centered")
 st.title("🚢 Predict Your Shipwreck Survival Odds")
 
 img = Image.open("titanic.jpg")
