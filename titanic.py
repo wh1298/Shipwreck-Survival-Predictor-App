@@ -140,6 +140,14 @@ def plot_training(history):
 
     # Loss Plot
     st.subheader("📉 Training and Validation Loss")
+    st.write("""
+    **What this means:**
+    - *Training Loss* shows how well the model is learning from the data it was trained on.
+    - *Validation Loss* shows how well the model performs on unseen data (used to detect overfitting).
+    - Ideally, both lines go down together.  
+    - If validation loss starts increasing while training loss decreases, the model is overfitting.
+    """)
+    
     fig, ax = plt.subplots()
     plt.plot(epochs, history["loss"], "g", label="Training Loss")
     plt.plot(epochs, history["val_loss"], "b", label="Validation Loss")
@@ -150,6 +158,14 @@ def plot_training(history):
 
     # Accuracy Plot
     st.subheader("📈 Training and Validation Accuracy")
+    st.info("""
+    **Accuracy plot explanation:**  
+    - **Training Accuracy (green):** Fraction of correct predictions on training data.  
+    - **Validation Accuracy (blue):** Fraction of correct predictions on unseen data.  
+    - Higher accuracy = better performance.  
+    - Look for convergence between training and validation accuracy.
+    """)
+    
     fig, ax = plt.subplots()
     plt.plot(epochs, history[acc_key], "g", label="Training Accuracy")
     plt.plot(epochs, history[val_acc_key], "b", label="Validation Accuracy")
