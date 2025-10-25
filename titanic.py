@@ -140,7 +140,7 @@ def plot_training(history):
 
     # Loss Plot
     st.subheader("📉 Training and Validation Loss")
-    st.write("""
+    st.info("""
     **What this means:**
     - *Training Loss* shows how well the model is learning from the data it was trained on.
     - *Validation Loss* shows how well the model performs on unseen data (used to detect overfitting).
